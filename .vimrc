@@ -1,7 +1,7 @@
 set nocompatible
 
 " Initialize Pathogen
-"runtime bundle/vim-pathogen/autoload/pathogen.vim
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " Enable syntax highlighting
@@ -13,9 +13,10 @@ set background=dark
 colorscheme solarized
 
 " Add line numbers
-set number
+"set number
 set ruler
 set cursorline
+set mouse=a
 
 " Disable Backup and Swap files
 set noswapfile
