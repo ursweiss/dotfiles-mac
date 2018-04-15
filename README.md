@@ -39,6 +39,11 @@ git remote add origin https://github.com/ursweiss/dotfiles-mac
 git fetch --all
 git reset --hard origin/master
 ```
+Now we need to initialize and update the submodules used:
+```sh
+git submodule init
+git submodule update
+```
 **Optional:** Set an oh-my-zsh option to not show any version control state for the dotfile repository. This will speed up the prompt within the home directory significantly.
 ```sh
 git config --add oh-my-zsh.hide-status 1
@@ -53,7 +58,7 @@ Open iTerms preferences and enable "Load preferences from a custom folder or URL
 
 **Important:** **Don't** check "Save changes to folder when iTerm2 quits" and **don't** click the "Save Current Settings to Folder".
 
-Restart iTerm2 and you should a nice looking windows with the default prompt of the "agnoster" theme.
+Restart iTerm2 and you should see a nice looking window with the default prompt of the "agnoster" theme.
 
 ## Vim
 
