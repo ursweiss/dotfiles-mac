@@ -13,7 +13,7 @@ set background=dark
 colorscheme solarized
 
 " Add line numbers
-"set number
+" set number
 set ruler
 set cursorline
 set mouse=a
@@ -40,16 +40,13 @@ set list listchars=tab:»·,trail:·
 set backspace=indent,eol,start
 
 " Strip trailing whitespaces on each save
-"fun! <SID>StripTrailingWhitespaces()
-"    let l = line(".")
-"    let c = col(".")
-"    %s/\s\+$//e
-"    call cursor(l, c)
-"endfun
-"autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-" Close window if last remaining window is NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Search related settings
 set incsearch
@@ -58,9 +55,6 @@ set hlsearch
 " Map Ctrl+l to clear highlighted searches
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
-" Highlight characters behind the 80 chars margin
-":au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)
-
 " Disable code folding
 set nofoldenable
 
@@ -68,15 +62,18 @@ set nofoldenable
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
+" Close window if last remaining window is NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " Enable Syntastic
 let g:syntastic_check_on_open=1
-let g:syntastic_go_checkers = ['go']
-let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_python_checkers = ['python']
+let g:syntastic_php_checkers=['php']
 
 " Use dedicated syntax checkers for these languages
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "passive_filetypes": ["erlang"] }
+    \ "passive_filetypes": [] }
 
 " Ignorde JS files on CTAGS generation
 let g:vim_tags_ignore_files = ['.gitignore', '.svnignore', '.cvsignore', '*.js', '*.json', '*.css']
@@ -89,9 +86,6 @@ au FileType ruby set softtabstop=2 tabstop=2 shiftwidth=2
 
 " Go uses tabs
 au FileType go set noexpandtab tabstop=4 shiftwidth=4
-
-" Go Foo
-let g:go_fmt_command = "goimports"
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
@@ -107,11 +101,3 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.eunit$',
   \ 'file': '\.exe$\|\.so$\|\.dll\|\.beam$\|\.DS_Store$'
   \ }
-
-
-" Use Ag instead of Ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" Gitgutter
-let g:gitgutter_sign_column_always = 1
-set updatetime=250
