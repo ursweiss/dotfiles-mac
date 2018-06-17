@@ -54,7 +54,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  git-flow
   docker
+  docker-compose
   colored-man-pages
   zsh-syntax-highlighting
 )
