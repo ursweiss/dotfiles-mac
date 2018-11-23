@@ -101,3 +101,15 @@ build_prompt() {
  fi
   prompt_end
 }
+
+# Ask for issue ID on commit
+unalias gcam
+function gcam {
+  vared -p 'Issue ID: ' -c issue_id
+  if [ -n "$issue_id" ]; then
+    message="$@ - $issue_id"
+  else
+    message="$@"
+  fi
+  git commit -a -m "$message"
+}
