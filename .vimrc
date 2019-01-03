@@ -54,6 +54,16 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 set incsearch
 set hlsearch
 
+" Hanlde copy paste
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
 " Map Ctrl+l to clear highlighted searches
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
