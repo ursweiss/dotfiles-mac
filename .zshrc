@@ -57,6 +57,7 @@ plugins=(
   git-flow
   docker
   docker-compose
+  kubectl
   colored-man-pages
   zsh-syntax-highlighting
 )
