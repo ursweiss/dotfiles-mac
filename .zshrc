@@ -61,6 +61,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  git-flow
+  docker
+  docker-compose
+  kubectl
   colored-man-pages
   zsh-syntax-highlighting
 )
@@ -104,6 +108,18 @@ build_prompt() {
     prompt_git
  fi
   prompt_end
+}
+
+# Ask for issue ID on commit
+unalias gcam
+function gcam {
+  vared -p 'Issue ID: ' -c issue_id
+  if [ -n "$issue_id" ]; then
+    message="$@ - $issue_id"
+  else
+    message="$@"
+  fi
+  git commit -a -m "$message"
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

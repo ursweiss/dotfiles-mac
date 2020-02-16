@@ -54,6 +54,16 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 set incsearch
 set hlsearch
 
+" Hanlde copy paste
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
 " Map Ctrl+l to clear highlighted searches
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
@@ -97,6 +107,9 @@ au BufNewFile,BufRead *.json set ft=javascript
 
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+
+" YAML uses 2 spaces
+au FileType yaml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " ctrp custom ignores
 let g:ctrlp_custom_ignore = {

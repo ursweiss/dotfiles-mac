@@ -13,6 +13,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ````
 
 ### Download the powerline patched font "Meslo"
+**NOTE:**·I'm not sure if the "fc-cache" command below is needed. If so, you may have to install the fonconfig package from homebrew:
+```sh
+brew install fontconfig
+```
 Download only the font files needed and copy them to the users fonts folder:
 ```sh
 cd ~ && \
