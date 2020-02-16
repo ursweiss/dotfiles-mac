@@ -22,6 +22,11 @@ fc-cache -f "~/Library/Fonts"
 ```
 **Note:** Updating the font cache (fc-cache command) can take some time.
 
+### Install powerlevel10k theme
+```sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+```
+
 ## dotfiles
 If not done already, you should set the name and eMail address git uses first:
 ```sh
