@@ -67,6 +67,7 @@ plugins=(
   kubectl
   colored-man-pages
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
