@@ -107,9 +107,22 @@ build_prompt() {
   prompt_dir
   if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]];then
     prompt_git
- fi
+  fi
   prompt_end
 }
+
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Ask for issue ID on commit
 unalias gcam
