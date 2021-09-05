@@ -75,6 +75,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   you-should-use
+  zsh-recall
 )
 
 source $ZSH/oh-my-zsh.sh
