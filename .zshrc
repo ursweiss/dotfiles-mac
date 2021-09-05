@@ -74,6 +74,7 @@ plugins=(
   colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-iterm-touchbar
 )
 
 source $ZSH/oh-my-zsh.sh
