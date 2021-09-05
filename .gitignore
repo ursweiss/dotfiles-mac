@@ -5,3 +5,5 @@
 !.vim/
 !.vim/bundle/
 !.vim/bundle/*
+!.zshrc
+!.p10k.zsh
