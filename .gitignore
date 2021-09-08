@@ -7,3 +7,5 @@
 !.vim/bundle/*
 !.zshrc
 !.p10k.zsh
+!.iterm2/
+!.iterm2/*
