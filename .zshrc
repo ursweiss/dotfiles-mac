@@ -70,6 +70,7 @@ plugins=(
   git-flow
   docker
   docker-compose
+  minikube
   kubectl
   colored-man-pages
   zsh-syntax-highlighting
@@ -103,7 +104,8 @@ export LANG=en_US.UTF-8
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
+alias gsc='cd ~/Git/Swisscom'
+alias gscp='cd ~/Git/Swisscom/1_Personal'
 
 # Overwrite the build prompt of the agnoster theme to take OMZs hide status in account
 build_prompt() {
@@ -149,3 +151,6 @@ function gcam {
 
 # Set path to OpenJDK
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# Minikube ENV
+eval $(minikube docker-env)
