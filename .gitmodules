@@ -5,17 +5,11 @@
 [submodule ".oh-my-zsh/custom/plugins/you-should-use"]
 	path = .oh-my-zsh/custom/plugins/you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
-[submodule ".oh-my-zsh/custom/plugins/zsh-recall"]
-	path = .oh-my-zsh/custom/plugins/zsh-recall
-	url = https://github.com/mango-tree/zsh-recall.git
 
 # Vim
 [submodule ".vim/bundle/vim-pathogen"]
 	path = .vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git

@@ -76,7 +76,6 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   you-should-use
-  zsh-recall
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -152,5 +151,6 @@ function gcam {
 # Set path to OpenJDK
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
-# Minikube ENV
-eval $(minikube docker-env)
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/taaweur3/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

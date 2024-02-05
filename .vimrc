@@ -1,18 +1,21 @@
 set nocompatible
 
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_blacklist = []
+
 " Initialize Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " Enable syntax highlighting
-syntax on
+syntax enable
 filetype plugin indent on
 
 " Colorscheme
-set background=dark
-colorscheme solarized
+let g:airline_theme='solarized'
+let g:solarized_termcolors=256
 let g:airline_solarized_bg='dark'
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 
 " Add line numbers
 " set number
